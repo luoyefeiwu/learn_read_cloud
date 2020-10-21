@@ -1,34 +1,48 @@
 package com.jerry.model;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.sql.Timestamp;
+
+
 @Entity
-@Table(name = "mqsb_casedetail")
+@Table(name = "user")
 public class User {
 
-    private Integer id;
 
+    @Id
+    private Integer id;
     /**
      * 唯一id
      */
+    @Column
     private String uuid;
 
     /**
      * 登录名
      */
+    @Column
     private String loginName;
 
     /**
      * 中文名
      */
+    @Column
     private String nickName;
 
     /**
      * 联系电话
      */
+    @Column
     private String phoneNumber;
 
     /**
      * 头像
      */
+    @Column
     private String headImgUrl;
 
     public Integer getId() {

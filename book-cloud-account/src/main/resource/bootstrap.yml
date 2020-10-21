@@ -17,3 +17,4 @@ spring:
       discovery:
         server-addr: nacons.jerry.com:8848
         namespace: 4d109a4d-f34d-4e86-9e39-c2d36db24b00
+        
