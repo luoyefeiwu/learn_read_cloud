@@ -12,7 +12,7 @@
 
     <packaging>pom</packaging>
     <groupId>com.jerry</groupId>
-    <artifactId>learn-reading-cloud</artifactId>
+    <artifactId>learn-book-cloud</artifactId>
     <name>book-cloud</name>
     <version>1.0.0</version>
 
@@ -20,7 +20,7 @@
         <module>book-cloud-common</module>
         <module>book-cloud-account</module>
         <module>book-cloud-gateway</module>
-        <module>book-feigen-client</module>
+        <module>book-cloud-feigen-client</module>
         <module>book-cloud-homepage</module>
     </modules>
 
