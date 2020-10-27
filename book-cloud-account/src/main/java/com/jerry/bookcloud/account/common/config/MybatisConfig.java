@@ -29,7 +29,7 @@ import java.util.Properties;
  * @since: 2020/4/2
  */
 @Configuration
-@MapperScan(basePackages = "cn.zealon.readingcloud.account.dao",
+@MapperScan(basePackages = "com.jerry.bookcloud.account.dao",
         sqlSessionTemplateRef="accountCenterSqlSessionTemplate")
 public class MybatisConfig {
 

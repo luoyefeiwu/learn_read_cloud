@@ -1,6 +1,6 @@
 package com.jerry.bookcloud.account.dao;
 
-import com.jerry.bookcloud.account.model.User;
+import com.jerry.bookcloud.common.pojo.account.User;
 
 public interface UserMapper {
     /**
@@ -50,4 +50,13 @@ public interface UserMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(User record);
+
+
+    /**
+     * 根据登录名查找用户信息
+     *
+     * @param loginName 登录名
+     * @return
+     */
+    User selectByLoginName(String loginName);
 }

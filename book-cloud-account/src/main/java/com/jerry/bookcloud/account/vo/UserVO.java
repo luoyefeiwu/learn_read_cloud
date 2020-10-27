@@ -1,15 +1,15 @@
-package com.jerry.bookcloud.common.pojo.account;
+package com.jerry.bookcloud.account.vo;
 
 import lombok.Data;
+
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * 用户
+ * 用户信息
  * @author: zealon
- * @since: 2020/4/10
+ * @since: 2020/4/11
  */
-public class User implements Serializable {
+public class UserVO implements Serializable {
 
     private static final Long serialVersionUID = 1L;
 
@@ -19,11 +19,6 @@ public class User implements Serializable {
      * 唯一id
      */
     private String uuid;
-
-    /**
-     * 密码
-     */
-    private String userPwd;
 
     /**
      * 登录名
@@ -40,17 +35,10 @@ public class User implements Serializable {
      */
     private String phoneNumber;
 
+    /**
+     * 头像
+     */
     private String headImgUrl;
-
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
 
     public static Long getSerialVersionUID() {
         return serialVersionUID;
@@ -70,14 +58,6 @@ public class User implements Serializable {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
-    }
-
-    public String getUserPwd() {
-        return userPwd;
-    }
-
-    public void setUserPwd(String userPwd) {
-        this.userPwd = userPwd;
     }
 
     public String getLoginName() {
@@ -110,21 +90,5 @@ public class User implements Serializable {
 
     public void setHeadImgUrl(String headImgUrl) {
         this.headImgUrl = headImgUrl;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
     }
 }

@@ -1,6 +1,6 @@
 package com.jerry.bookcloud.account.common.utils;
 
-import com.jerry.bookcloud.account.model.User;
+import com.jerry.bookcloud.account.vo.UserVO;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -23,7 +23,7 @@ public class JwtUtil {
      * @param user
      * @return
      */
-    public static String buildJwt(Date expire, User user) {
+    public static String buildJwt(Date expire, UserVO user) {
         String jwt = Jwts.builder()
                 // 使用HS256加密算法
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)

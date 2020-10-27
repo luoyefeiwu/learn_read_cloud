@@ -19,7 +19,7 @@ public class AccountCenterDataSourceConfig {
 
     /** 数据源Bean */
     @Bean(name = "accountCenterDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.account-center")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource accountCenterDataSource(){
         return new DruidDataSource();
     }

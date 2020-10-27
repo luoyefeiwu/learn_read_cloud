@@ -1,6 +1,6 @@
 package com.jerry.bookcloud.account.dao;
 
-import com.jerry.bookcloud.account.model.UserBookshelf;
+import com.jerry.bookcloud.common.pojo.account.UserBookshelf;
 
 public interface UserBookshelfMapper {
     /**

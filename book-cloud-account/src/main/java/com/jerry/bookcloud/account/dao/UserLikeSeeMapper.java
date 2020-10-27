@@ -1,6 +1,6 @@
 package com.jerry.bookcloud.account.dao;
 
-import com.jerry.bookcloud.account.model.UserLikeSee;
+import com.jerry.bookcloud.common.pojo.account.UserLikeSee;
 
 public interface UserLikeSeeMapper {
     /**
