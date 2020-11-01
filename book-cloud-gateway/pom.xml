@@ -26,6 +26,28 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+        <!--JWT-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
+
+        <!-- 公用包 -->
+        <dependency>
+            <groupId>com.jerry</groupId>
+            <artifactId>book-cloud-common</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <!-- Spring Cloud Begin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <!-- Spring Cloud End -->
+
     </dependencies>
 
     <build>
