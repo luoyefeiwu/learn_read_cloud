@@ -1,0 +1,69 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: book-cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacons.jerry.com:8848
+     # 路由网关配置
+    gateway:
+    # 设置与服务注册发现组件结合，这样可以采用服务名的路由策略
+      discovery:
+        locator:
+          enabled: true
+          # 服务名小写
+          lower-case-service-id: true
+      routes:
+        - id: book-center-rpc
+          uri: lb://book-cloud-book
+          predicates:
+            - Path=/book/**
+            - Method=GET
+          filters:
+          # 降级配置
+            - name: Hystrix
+              args:
+                name:fallbackcmd
+                fallbackUri: forward:/fallback
+          # 限流配置
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 3 # 每秒允许处理的请求数量
+                redis-rate-limiter.burstCapacity: 5 # 每秒最大处理的请求数量
+                key-resolver: "#{@ipKeyResolver}" # 限流策略，对应策略的Bean
+
+        - id: homepage-rpc
+          uri: lb://book-cloud-homepage
+          predicates:
+            - Path=/index/**
+              filters:
+              # 降级配置
+              - name: Hystrix
+                args:
+                  name: fallbackcmd
+                  fallbackUri: forward:/fallback
+                  # 限流配置
+                  - name: RequestRateLimiter
+                    args:
+                      redis-rate-limiter.replenishRate: 3
+                      redis-rate-limiter.burstCapacity: 5
+                      key-resolver: "#{@ipKeyResolver}"
+
+        - id: account-center-rpc
+          uri: lb://light-reading-cloud-account
+          predicates:
+            - Path=/account/**
+              filters:
+              # 降级配置
+              - name: Hystrix
+                args:
+                  name: fallbackcmd
+                  fallbackUri: forward:/fallback
+                  # 限流配置
+                  - name: RequestRateLimiter
+                    args:
+                      redis-rate-limiter.replenishRate: 3
+                      redis-rate-limiter.burstCapacity: 5
+                      key-resolver: "#{@ipKeyResolver}"
