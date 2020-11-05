@@ -16,7 +16,7 @@ public class BookCenterDataSource {
      * 数据源Bean
      */
     @Bean(name = "bookCenterDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.book-center")
+    @ConfigurationProperties(prefix = "spring.datasourceS")
     public DataSource bookCenterDataSource() {
         return new DruidDataSource();
     }
